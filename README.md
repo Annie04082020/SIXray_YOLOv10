@@ -2,7 +2,7 @@
 
 This is a project using [SIXray](https://github.com/MeioJane/SIXray) dataset to build up security image recognition for some common danger goods: Gun, Knife, Wrench, Pliers, and Scissors.
 
-This repo is targeted to compare the YOLOv10 method with the original and YOLOv4 method in the dimensions of detect precision, training parameters and also optimisers.
+This repo is targeted to compare the [YOLOv10](https://github.com/THU-MIG/yolov10?tab=readme-ov-file) method with the original and YOLOv4 method in the dimensions of detect precision, training parameters and also optimisers.
 
 ### Building Commands
 
