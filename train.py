@@ -35,8 +35,8 @@ dataset_path = r"D:\SIXray_YOLO\dataset.yaml"  # 改成 Windows 絕對路徑
 model.train(
     data=dataset_path,
     epochs=10,
-    batch=20,           # 先小一點
-    imgsz=480,
+    batch=16,           # 先小一點
+    imgsz=320,
     device="cuda",
     amp=False,
     workers=0,          # 關閉多線程 dataloader
@@ -46,8 +46,8 @@ model.train(
 
 model.val(
     data=dataset_path,
-    batch=20,
-    imgsz=480,
+    batch=16,
+    imgsz=320,
     device="cuda",
     save_json=True
 )
