@@ -10,8 +10,8 @@ def main():
 
     results = model.val(
         data=dataset_path,
-        batch=16,
-        imgsz=320,
+        batch=12,
+        imgsz=480,
         device="cuda",
         save_json=True
     )
