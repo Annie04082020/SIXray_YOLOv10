@@ -1,0 +1,11 @@
+path: D://SIXray_YOLO
+train: D://SIXray_YOLO/images/train
+val: D://SIXray_YOLO/images/val
+test: D://SIXray_YOLO/images/test
+
+names:
+  0: gun
+  1: knife
+  2: wrench
+  3: pilers
+  4: scissors
