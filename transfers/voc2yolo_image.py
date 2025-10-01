@@ -143,7 +143,7 @@ if __name__ == "__main__":
     print(f"ℹ️ 從 YAML 載入的類別: {GLOBAL_CLASSES}")
         
     # 2. 定義基礎路徑和 XML 統一路徑
-    base_dir = Path("./../SIXray_compressed") 
+    base_dir = Path("./../../SIXray_YOLO") 
     
     # *** 假設所有的 XML 檔案都集中在這個資料夾內 ***
     # 請根據您實際存放 XML 檔案的位置來調整這個路徑。

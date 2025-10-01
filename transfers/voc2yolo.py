@@ -149,7 +149,7 @@ if __name__ == "__main__":
     # base_dir = Path("D://SIXray_YOLO") 
     
     # 設定 B (使用相對路徑，較靈活)：如果您的 voc2yolo.py 在某個目錄下，而 SIXray_YOLO 在其同級或上一級
-    base_dir = Path("./../SIXray_compressed") # 保持您原來的相對路徑設定
+    base_dir = Path("./../../SIXray_YOLO") # 保持您原來的相對路徑設定
 
     for split in ["train", "val", "test"]:
         # XML 檔案應在 base_dir/xmls/split_name

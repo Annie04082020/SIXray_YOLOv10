@@ -2,7 +2,7 @@ import os
 import shutil
 import xml.etree.ElementTree as ET
 
-# ===== 設定路徑 =====
+# ===== 設定路徑 =====(old routes)
 positive_img_dir = "./../SIXray/Image"   # 原始圖片資料夾
 positive_xml_dir = "./../SIXray/positive-Annotation"     # 原始 XML 資料夾
 output_dir = "./../SIXray_Categories"       # 複製後的類別資料夾根目錄

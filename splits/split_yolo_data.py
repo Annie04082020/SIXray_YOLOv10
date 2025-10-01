@@ -25,7 +25,7 @@ import shutil
 import random
 from collections import defaultdict, Counter
 
-# ===== 設定 =====
+# ===== 設定 ===== (old routes)
 SOURCE_CATEGORIES_DIR = "./../SIXray_Categories"   # <-- 改成你 categories 根目錄
 TARGET_DIR = "./../SIXray_YOLO"          # <-- 改成你想輸出的資料夾
 IMAGE_EXTS = [".jpg", ".jpeg", ".png", ".bmp"]

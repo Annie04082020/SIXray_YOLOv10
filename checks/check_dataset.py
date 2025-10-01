@@ -86,7 +86,7 @@ def verify_dataset(base_dir, splits):
 if __name__ == "__main__":
     
     # *** 請根據您的實際路徑修改 base_dir ***
-    BASE_DIR = Path("./../SIXray_YOLO") 
+    BASE_DIR = Path("./../../SIXray_YOLO") 
     
     SPLITS = ["train", "val", "test"]
     

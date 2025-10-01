@@ -4,7 +4,7 @@ from collections import Counter, defaultdict
 import random
 
 # 設定資料夾路徑
-xml_folder = './../SIXray/positive-Annotation'
+xml_folder = './../../SIXray_YOLO/xml_all'
 
 category_counter = Counter()         # 原本統計違禁品總數量
 category_image_counter = Counter()   # 統計有該種類違禁品的圖片數量

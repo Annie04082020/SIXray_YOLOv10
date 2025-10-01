@@ -2,7 +2,7 @@ import os
 import shutil
 import random
 
-# --------- 設定路徑 ---------
+# --------- 設定路徑 (old routes)---------
 negative_dir = "./../SIXray/JPEGImages"  # 原始負樣本資料夾
 output_dir = "./../SIXray_YOLO"  # 最終 YOLO 資料夾
 

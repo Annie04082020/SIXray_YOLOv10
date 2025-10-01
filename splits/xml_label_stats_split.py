@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 import random
 
-# 設定資料夾路徑
+# 設定資料夾路徑 (old routes)
 xml_folder = './../SIXray/positive-Annotation'
 
 category_counter = Counter()

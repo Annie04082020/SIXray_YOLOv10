@@ -30,13 +30,13 @@ print(f"Model loaded successfully: {type(model)}")
 print(torch.version.cuda)
 print(torch.cuda.is_available())
 
-dataset_path = r"D:\SIXray_YOLO\dataset.yaml"  # 改成 Windows 絕對路徑
+dataset_path = "./../SIXray_YOLO/dataset.yaml"  # 改成 Windows 絕對路徑
 
 model.train(
     data=dataset_path,
-    epochs=50,
-    batch=12,           # 先小一點
-    imgsz=480,
+    epochs=200,
+    batch=32,           # 先小一點
+    imgsz=640,
     device="cuda",
     amp=False,
     workers=0,          # 關閉多線程 dataloader
@@ -52,4 +52,4 @@ model.train(
 #     save_json=True
 # )
 
-model.save(r"D:\SIXray_code\savemodel\yolov10n_sixray2.pt")  # 改成絕對路徑
+model.save("./SIXray_YOLOv10/savemodel/yolov10n_sixray3.pt")  # 改成絕對路徑

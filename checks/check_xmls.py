@@ -47,7 +47,7 @@ if __name__ == "__main__":
     
     # 1. XML 統一路徑設定 (假設在 SIXray_YOLO/xmls/ 下)
     # 如果您的 XML 統一放在 SIXray_YOLO/xmls，則不需要修改。
-    BASE_DIR = Path("./../SIXray_YOLO") 
+    BASE_DIR = Path("./../../SIXray_YOLO") 
     XML_ALL_DIR = BASE_DIR / "xml_all" 
 
     # 2. 檔案序列範圍設定

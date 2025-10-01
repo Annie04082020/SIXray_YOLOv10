@@ -3,6 +3,7 @@ import os
 import shutil
 import xml.etree.ElementTree as ET
 
+# These routes are written in old pc
 xml_dir = "./../SIXray/positive-Annotation"    # 改成你的 xml 資料夾
 img_dir = "./../SIXray/Image"         # 改成你放圖的資料夾
 out_review_dir = "/mnt/d/SIXray/review_empty"  # 用來放要人工檢視的影像
