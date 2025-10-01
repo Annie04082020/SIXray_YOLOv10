@@ -39,7 +39,7 @@ model.train(
     imgsz=640,
     device="cuda",
     amp=False,
-    workers=0,          # 關閉多線程 dataloader
+    workers=4,        # 開啟多線程 dataloader
     verbose=True,
     cache=True
 )
