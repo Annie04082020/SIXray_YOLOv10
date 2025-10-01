@@ -30,7 +30,7 @@ print(f"Model loaded successfully: {type(model)}")
 print(torch.version.cuda)
 print(torch.cuda.is_available())
 
-dataset_path = "./../SIXray_YOLO/dataset.yaml"  # 改成 Windows 絕對路徑
+dataset_path = "./../SIXray_YOLO/dataset.yaml"  
 
 model.train(
     data=dataset_path,
