@@ -63,3 +63,27 @@ pip install -r requirements.txt
 set KMP_DUPLICATE_LIB_OK=TRUE
 python train.py
 ```
+
+- If needed to install different cuda in env:
+
+```
+pip uninstall torch torchvision torchaudio -y
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
+
+**Validation** 
+
+```
+python
+>>> import torch
+>>> print(torch.cuda.is_available())
+# Expected Output：True
+```
+
+- Can't import ultralytics: (from [YOLOv10](https://github.com/THU-MIG/yolov10?tab=readme-ov-file))
+
+```
+cd yolov10
+pip install -r requirements.txt
+pip install -e .
+```
