@@ -8,7 +8,7 @@ plt.rcParams['font.sans-serif'] = ['SimHei', 'Arial Unicode MS', 'DejaVu Sans', 
 plt.rcParams['axes.unicode_minus'] = False
 
 # 🔥 **關鍵修復：自動清理欄位空格**
-df = pd.read_csv('runs/detect/train20/results.csv')
+df = pd.read_csv('runs/detect/train24/results.csv')
 df.columns = df.columns.str.strip()  # ← **這行救命！**
 df['epoch'] = df['epoch'].astype(int)  # Epoch轉整數
 
@@ -51,7 +51,7 @@ axes[1,1].set_title(' LR Schedule (Log)')
 axes[1,1].set_yscale('log'); axes[1,1].grid(alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('yolov10_analysis.png', dpi=300, bbox_inches='tight')
+plt.savefig('yolov10_analysis_4th.png', dpi=300, bbox_inches='tight')
 plt.show()
 
 # 🏆 **最佳Epoch自動印出**
