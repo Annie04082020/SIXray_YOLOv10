@@ -32,7 +32,7 @@ def main():
         data=dataset_path,
         epochs=100, 
         # batch=128, #try 128 for m model
-        batch = 256, #try 256 for s model
+        batch = 128, #try 128 for s model, 256 crashed at epoch 10
         imgsz=256,
         device="cuda",
         amp=True,
