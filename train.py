@@ -22,25 +22,28 @@ import torch
 
 def main():
     dataset_path = "./../SIXray_YOLO/dataset.yaml" 
-    # model = YOLOv10.from_pretrained('jameslahm/yolov10n')
-    model = YOLOv10('savemodel/best-19.pt')  # 改成絕對路徑   
+    model = YOLOv10.from_pretrained('jameslahm/yolov10s')
+    # model = YOLOv10('savemodel/best-24.pt')  # 改成絕對路徑   
     
     print(f"Model loaded successfully: {type(model)}")
     print(torch.version.cuda)
     print(torch.cuda.is_available())
     model.train(
         data=dataset_path,
-        epochs=100,
-        batch=256,           
+        epochs=100, 
+        # batch=128, #try 128 for m model
+        batch = 256, #try 256 for s model
         imgsz=256,
         device="cuda",
         amp=True,
         workers=8,        # 開啟多線程 dataloader
         verbose=True,
+        lr0=0.01,
+        lrf=0.01,
         # cache="disk"
     )
-    model.save("./SIXray_YOLOv10/savemodel/yolov10n_sixray3.pt")  # 改成絕對路徑
-
+    # model.save("./SIXray_YOLOv10/savemodel/yolov10n_sixray3.pt")  # 改成絕對路徑
+    model.save("C:\\Users\\JohnsonKu\\Desktop\\SIXray_YOLOv10\\savemodel\\yolov10s_sixray28.pt")  # 改成絕對路徑
 
 if __name__ == '__main__':
     import multiprocessing

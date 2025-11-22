@@ -1,7 +1,7 @@
 from ultralytics import YOLOv10
 import torch
 def main():
-    model = YOLOv10(r"D:\SIXray_code\savemodel\best.pt")
+    model = YOLOv10('./savemodel/best-24.pt') 
     print(f"Model loaded successfully: {type(model)}")
     print(torch.version.cuda)
     print(torch.cuda.is_available())

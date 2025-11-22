@@ -1,0 +1,97 @@
+(yolov10) C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10>python train.py
+config.json: 1.72kB [00:00, ?B/s]
+model.safetensors: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████| 32.7M/32.7M [00:02<00:00, 11.6MB/s]
+Model loaded successfully: <class 'ultralytics.models.yolov10.model.YOLOv10'>
+11.8
+True
+Ultralytics YOLOv8.1.34 🚀 Python-3.10.0 torch-2.7.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3080, 12288MiB)
+engine\trainer: task=detect, mode=train, model=yolov10s.yaml, data=./../SIXray_YOLO/dataset.yaml, epochs=100, time=None, patience=100, batch=256, imgsz=256, save=True, save_period=-1, val_period=1, cache=False, device=cuda, workers=8, project=None, name=train28, exist_ok=False, pretrained=True, optimizer=auto, verbose=True, seed=0, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=10, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=True, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=False, opset=None, workspace=4, nms=False, lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, label_smoothing=0.0, nbs=64, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, bgr=0.0, mosaic=1.0, mixup=0.0, copy_paste=0.0, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10\runs\detect\train28
+Overriding model.yaml nc=80 with nc=5
+
+                   from  n    params  module                                       arguments
+  0                  -1  1       928  ultralytics.nn.modules.conv.Conv             [3, 32, 3, 2]
+  1                  -1  1     18560  ultralytics.nn.modules.conv.Conv             [32, 64, 3, 2]
+  2                  -1  1     29056  ultralytics.nn.modules.block.C2f             [64, 64, 1, True]
+  3                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]
+  4                  -1  2    197632  ultralytics.nn.modules.block.C2f             [128, 128, 2, True]
+  5                  -1  1     36096  ultralytics.nn.modules.block.SCDown          [128, 256, 3, 2]
+  6                  -1  2    788480  ultralytics.nn.modules.block.C2f             [256, 256, 2, True]
+  7                  -1  1    137728  ultralytics.nn.modules.block.SCDown          [256, 512, 3, 2]
+  8                  -1  1    958464  ultralytics.nn.modules.block.C2fCIB          [512, 512, 1, True, True]
+  9                  -1  1    656896  ultralytics.nn.modules.block.SPPF            [512, 512, 5]
+ 10                  -1  1    990976  ultralytics.nn.modules.block.PSA             [512, 512]
+ 11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 13                  -1  1    591360  ultralytics.nn.modules.block.C2f             [768, 256, 1]
+ 14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 16                  -1  1    148224  ultralytics.nn.modules.block.C2f             [384, 128, 1]
+ 17                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]
+ 18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 19                  -1  1    493056  ultralytics.nn.modules.block.C2f             [384, 256, 1]
+ 20                  -1  1     68864  ultralytics.nn.modules.block.SCDown          [256, 256, 3, 2]
+ 21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 22                  -1  1   1089536  ultralytics.nn.modules.block.C2fCIB          [768, 512, 1, True, True]
+ 23        [16, 19, 22]  1   1642670  ultralytics.nn.modules.head.v10Detect        [5, [128, 256, 512]]
+YOLOv10s summary: 402 layers, 8070222 parameters, 8070206 gradients, 24.8 GFLOPs
+
+Freezing layer 'model.23.dfl.conv.weight'
+C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10\yolov10\ultralytics\engine\trainer.py:277: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = torch.cuda.amp.GradScaler(enabled=self.amp)
+train: Scanning C:\Users\JohnsonKu\Desktop\SIXray_YOLO\labels\train.cache... 762646 images, 756209 backgrounds, 0 corrupt: 100%|██████████| 762646/762646 [00:00<?,
+val: Scanning C:\Users\JohnsonKu\Desktop\SIXray_YOLO\labels\val.cache... 84738 images, 84051 backgrounds, 0 corrupt: 100%|██████████| 84738/84738 [00:00<?, ?it/s]
+Plotting labels to C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10\runs\detect\train28\labels.jpg...
+optimizer: 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically...
+optimizer: SGD(lr=0.01, momentum=0.9) with parameter groups 99 weight(decay=0.0), 112 weight(decay=0.002), 111 bias(decay=0.0)
+Image sizes 256 train, 256 val
+Using 8 dataloader workers
+Logging results to C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10\runs\detect\train28
+Starting training for 100 epochs...
+
+      Epoch    GPU_mem     box_om     cls_om     dfl_om     box_oo     cls_oo     dfl_oo  Instances       Size
+      1/100      12.2G      3.759      36.71      3.003      3.028      59.24      2.538          0        256: 100%|██████████| 2980/2980 [46:36<00:00,  1.07it/s]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 166/166 [13:12<00:00,  4.78s/it]
+                   all      84738       1406   2.99e-05      0.529    0.00201   0.000423
+
+      Epoch    GPU_mem     box_om     cls_om     dfl_om     box_oo     cls_oo     dfl_oo  Instances       Size
+      2/100      13.2G      2.851       4.42      2.184        2.6       4.65      1.984          0        256: 100%|██████████| 2980/2980 [1:09:18<00:00,  1.40s/it
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 166/166 [29:23<00:00, 10.62s/it]
+                   all      84738       1406      0.825     0.0325       0.02    0.00602
+
+      Epoch    GPU_mem     box_om     cls_om     dfl_om     box_oo     cls_oo     dfl_oo  Instances       Size
+      3/100      13.2G      2.765      4.261      2.111      2.549      4.522      1.961          0        256: 100%|██████████| 2980/2980 [51:18<00:00,  1.03s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 166/166 [13:32<00:00,  4.89s/it]
+                   all      84738       1406   8.67e-05      0.814     0.0481     0.0147
+
+      Epoch    GPU_mem     box_om     cls_om     dfl_om     box_oo     cls_oo     dfl_oo  Instances       Size
+      4/100      13.2G      2.717      4.119      2.081      2.554      4.362      1.929          0        256: 100%|██████████| 2980/2980 [56:17<00:00,  1.13s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 166/166 [13:38<00:00,  4.93s/it]
+                   all      84738       1406      0.892     0.0372     0.0807     0.0288
+
+      Epoch    GPU_mem     box_om     cls_om     dfl_om     box_oo     cls_oo     dfl_oo  Instances       Size
+      5/100      13.2G       2.63      3.954      2.013      2.464      4.219      1.849          0        256: 100%|██████████| 2980/2980 [1:09:31<00:00,  1.40s/it
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 166/166 [13:43<00:00,  4.96s/it]
+                   all      84738       1406      0.877     0.0447     0.0763     0.0289
+
+      Epoch    GPU_mem     box_om     cls_om     dfl_om     box_oo     cls_oo     dfl_oo  Instances       Size
+      6/100      13.2G      2.637      3.889      2.029      2.463      4.175      1.866          2        256: 100%|██████████| 2980/2980 [1:09:37<00:00,  1.40s/it
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 166/166 [13:41<00:00,  4.95s/it]
+                   all      84738       1406      0.894     0.0282     0.0688     0.0266
+
+      Epoch    GPU_mem     box_om     cls_om     dfl_om     box_oo     cls_oo     dfl_oo  Instances       Size
+      7/100      13.2G       2.57      3.814      1.977      2.398      4.096      1.808          2        256: 100%|██████████| 2980/2980 [57:35<00:00,  1.16s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 166/166 [13:44<00:00,  4.96s/it]
+                   all      84738       1406      0.901     0.0296     0.0739     0.0289
+
+      Epoch    GPU_mem     box_om     cls_om     dfl_om     box_oo     cls_oo     dfl_oo  Instances       Size
+      8/100      13.2G      2.579      3.856      1.985      2.422      4.126      1.818          0        256: 100%|██████████| 2980/2980 [52:08<00:00,  1.05s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 166/166 [13:39<00:00,  4.94s/it]
+                   all      84738       1406      0.904     0.0301     0.0749     0.0292
+
+      Epoch    GPU_mem     box_om     cls_om     dfl_om     box_oo     cls_oo     dfl_oo  Instances       Size
+      9/100      13.2G       2.54      3.727      1.958      2.385      4.016      1.804          0        256: 100%|██████████| 2980/2980 [59:03<00:00,  1.19s/it]
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100%|██████████| 166/166 [13:50<00:00,  5.00s/it]
+                   all      84738       1406      0.912     0.0293     0.0803     0.0313
+
+      Epoch    GPU_mem     box_om     cls_om     dfl_om     box_oo     cls_oo     dfl_oo  Instances       Size
+     10/100      13.2G       2.59      3.759      1.983      2.408      4.026      1.812          4        256:  36%|███▌      | 1059/2980 [31:46:21<57:38:05, 108.0
