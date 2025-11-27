@@ -22,15 +22,18 @@ import torch
 
 def main():
     dataset_path = "./../SIXray_YOLO/dataset.yaml" 
-    model = YOLOv10.from_pretrained('jameslahm/yolov10s')
-    # model = YOLOv10('savemodel/best-24.pt')  # 改成絕對路徑   
+    # model = YOLOv10.from_pretrained('jameslahm/yolov10s')
+    # model = YOLOv10('savemodel/yolov10s_sixray28.pt')  
+    model = YOLOv10 ('runs/detect/train30/weights/last.pt')
     
     print(f"Model loaded successfully: {type(model)}")
     print(torch.version.cuda)
     print(torch.cuda.is_available())
     model.train(
         data=dataset_path,
-        epochs=100, 
+        epochs=100,
+        resume=True, 
+        # epochs=14,
         # batch=128, #try 128 for m model
         batch = 128, #try 128 for s model, 256 crashed at epoch 10
         imgsz=256,
@@ -43,7 +46,7 @@ def main():
         # cache="disk"
     )
     # model.save("./SIXray_YOLOv10/savemodel/yolov10n_sixray3.pt")  # 改成絕對路徑
-    model.save("C:\\Users\\JohnsonKu\\Desktop\\SIXray_YOLOv10\\savemodel\\yolov10s_sixray28.pt")  # 改成絕對路徑
+    model.save("C:\\Users\\JohnsonKu\\Desktop\\SIXray_YOLOv10\\savemodel\\yolov10s_sixray31.pt")  # 改成絕對路徑
 
 if __name__ == '__main__':
     import multiprocessing
