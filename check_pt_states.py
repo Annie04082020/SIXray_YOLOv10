@@ -28,7 +28,8 @@ torch_classes = [
 torch.serialization.add_safe_globals(torch_classes)
 
 # 4. 現在安全地載入 last.pt
-ckpt = torch.load("runs/detect/train28/weights/last.pt", weights_only=False)
+# ckpt = torch.load("runs/detect/train28/weights/last.pt", weights_only=False)
+ckpt = torch.load("savemodel/yolov10s_sixray30.pt", weights_only=False)
 
 print("Checkpoint keys:", ckpt.keys())
 

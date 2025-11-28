@@ -24,14 +24,14 @@ def main():
     dataset_path = "./../SIXray_YOLO/dataset.yaml" 
     # model = YOLOv10.from_pretrained('jameslahm/yolov10s')
     # model = YOLOv10('savemodel/yolov10s_sixray28.pt')  
-    model = YOLOv10 ('runs/detect/train30/weights/last.pt')
+    model = YOLOv10 ('savemodel/yolov10s_sixray30.pt')
     
     print(f"Model loaded successfully: {type(model)}")
     print(torch.version.cuda)
     print(torch.cuda.is_available())
     model.train(
         data=dataset_path,
-        epochs=100,
+        epochs=200,
         resume=True, 
         # epochs=14,
         # batch=128, #try 128 for m model
