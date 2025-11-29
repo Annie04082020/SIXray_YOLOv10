@@ -1,0 +1,61 @@
+
+(yolov10) C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10>python train.py
+Model loaded successfully: <class 'ultralytics.models.yolov10.model.YOLOv10'>
+11.8
+True
+Ultralytics YOLOv8.1.34 🚀 Python-3.10.0 torch-2.7.1+cu118 CUDA:0 (NVIDIA GeForce RTX 3080, 12288MiB)
+engine\trainer: task=detect, mode=train, model=runs\detect\train30\weights\best.pt, data=./../SIXray_YOLO/dataset.yaml, epochs=100, time=None, patience=100, batch=128, imgsz=256, save=True, save_period=-1, val_period=1, cache=False, device=cuda, workers=8, project=None, name=train302, exist_ok=False, pretrained=True, optimizer=auto, verbose=True, seed=0, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=10, resume=runs\detect\train30\weights\best.pt, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=True, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=False, opset=None, workspace=4, nms=False, lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.0, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, label_smoothing=0.0, nbs=64, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, bgr=0.0, mosaic=0.0, mixup=0.0, copy_paste=0.0, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10\runs\detect\train302
+
+                   from  n    params  module                                       arguments
+  0                  -1  1       928  ultralytics.nn.modules.conv.Conv             [3, 32, 3, 2]
+  1                  -1  1     18560  ultralytics.nn.modules.conv.Conv             [32, 64, 3, 2]
+  2                  -1  1     29056  ultralytics.nn.modules.block.C2f             [64, 64, 1, True]
+  3                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]
+  4                  -1  2    197632  ultralytics.nn.modules.block.C2f             [128, 128, 2, True]
+  5                  -1  1     36096  ultralytics.nn.modules.block.SCDown          [128, 256, 3, 2]
+  6                  -1  2    788480  ultralytics.nn.modules.block.C2f             [256, 256, 2, True]
+  7                  -1  1    137728  ultralytics.nn.modules.block.SCDown          [256, 512, 3, 2]
+  8                  -1  1    958464  ultralytics.nn.modules.block.C2fCIB          [512, 512, 1, True, True]
+  9                  -1  1    656896  ultralytics.nn.modules.block.SPPF            [512, 512, 5]
+ 10                  -1  1    990976  ultralytics.nn.modules.block.PSA             [512, 512]
+ 11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 13                  -1  1    591360  ultralytics.nn.modules.block.C2f             [768, 256, 1]
+ 14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 16                  -1  1    148224  ultralytics.nn.modules.block.C2f             [384, 128, 1]
+ 17                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]
+ 18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 19                  -1  1    493056  ultralytics.nn.modules.block.C2f             [384, 256, 1]
+ 20                  -1  1     68864  ultralytics.nn.modules.block.SCDown          [256, 256, 3, 2]
+ 21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 22                  -1  1   1089536  ultralytics.nn.modules.block.C2fCIB          [768, 512, 1, True, True]
+ 23        [16, 19, 22]  1   1642670  ultralytics.nn.modules.head.v10Detect        [5, [128, 256, 512]]
+YOLOv10s summary: 402 layers, 8070222 parameters, 8070206 gradients, 24.8 GFLOPs
+
+Transferred 619/619 items from pretrained weights
+Freezing layer 'model.23.dfl.conv.weight'
+C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10\yolov10\ultralytics\engine\trainer.py:277: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = torch.cuda.amp.GradScaler(enabled=self.amp)
+train: Scanning C:\Users\JohnsonKu\Desktop\SIXray_YOLO\labels\train.cache... 762646 images, 756209 backgrounds, 0 corrupt: 100%|██████████| 762646/762646
+val: Scanning C:\Users\JohnsonKu\Desktop\SIXray_YOLO\labels\val.cache... 84738 images, 84051 backgrounds, 0 corrupt: 100%|██████████| 84738/84738 [00:00<
+Plotting labels to C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10\runs\detect\train302\labels.jpg...
+optimizer: 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically...
+optimizer: SGD(lr=0.01, momentum=0.9) with parameter groups 99 weight(decay=0.0), 112 weight(decay=0.001), 111 bias(decay=0.0)
+Traceback (most recent call last):
+  File "C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10\train.py", line 54, in <module>
+    main()
+  File "C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10\train.py", line 32, in main
+    model.train(
+  File "C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10\yolov10\ultralytics\engine\model.py", line 657, in train
+    self.trainer.train()
+  File "C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10\yolov10\ultralytics\engine\trainer.py", line 213, in train
+    self._do_train(world_size)
+  File "C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10\yolov10\ultralytics\engine\trainer.py", line 328, in _do_train
+    self._setup_train(world_size)
+  File "C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10\yolov10\ultralytics\engine\trainer.py", line 320, in _setup_train
+    self.resume_training(ckpt)
+  File "C:\Users\JohnsonKu\Desktop\SIXray_YOLOv10\yolov10\ultralytics\engine\trainer.py", line 673, in resume_training
+    assert start_epoch > 0, (
+AssertionError: runs\detect\train30\weights\best.pt training to 100 epochs is finished, nothing to resume.
+Start a new training without resuming, i.e. 'yolo train model=runs\detect\train30\weights\best.pt'
