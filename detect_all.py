@@ -57,10 +57,11 @@ if __name__ == "__main__":
     
     # 2. 你希望偵測結果存到哪裡 (你的輸出)
     # detection_output_dir = "./../SIXray_YOLO/detection_results"
-    detection_output_dir = "./../SIXray_YOLO/detection_results_n_400_2"
+    detection_output_dir = "./../SIXray_YOLO/detection_results_n_100_2"
     
     # 3. 權重檔路徑
-    model_weight = 'savemodel/yolov10n_sixray25.pt'
+    # model_weight = 'savemodel/yolov10n_sixray25.pt'
+    model_weight = 'savemodel/yolov10n_sixray19.pt'
     # model_weight = 'runs/detect/train30/weights/best.pt'
     
     # 執行

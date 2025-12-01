@@ -61,8 +61,8 @@ def pick_images_by_list(src_root, dst_root, folder_list, num_per_folder=5):
 # --- 設定區域 ---
 if __name__ == "__main__":
     source_folder = "./../SIXray_YOLO"  # 你的原始資料夾路徑
-    output_folder = "./../SIXray_YOLO/detections2"  # 輸出路徑
-    images_to_take = 7               # 每個資料夾拿幾張
+    output_folder = "./../SIXray_YOLO/detections_100"  # 輸出路徑
+    images_to_take = 100               # 每個資料夾拿幾張
     
     # 【重點】請在這裡填入你要的資料夾名稱
     # 只需要填子資料夾的名字，例如 "cat", "dog"
