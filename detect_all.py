@@ -53,16 +53,18 @@ if __name__ == "__main__":
     
     # 1. 剛剛用程式抓出來的圖片資料夾 (你的來源)
     # 請填入上一一個步驟的 output_folder
-    images_source_dir = "./../SIXray_YOLO/detections2"
+    # images_source_dir = "./../SIXray_YOLO/detections2"
+    images_source_dir = "./detections"
     
     # 2. 你希望偵測結果存到哪裡 (你的輸出)
     # detection_output_dir = "./../SIXray_YOLO/detection_results"
-    detection_output_dir = "./../SIXray_YOLO/detection_results_n_100_2"
+    # detection_output_dir = "./../SIXray_YOLO/detection_results_n_100_2"
+    detection_output_dir = "./detection_results_n_300"
     
     # 3. 權重檔路徑
     # model_weight = 'savemodel/yolov10n_sixray25.pt'
-    model_weight = 'savemodel/yolov10n_sixray19.pt'
-    # model_weight = 'runs/detect/train30/weights/best.pt'
+    # model_weight = 'savemodel/yolov10n_sixray19.pt'
+    model_weight = 'runs/detect/train24/weights/best.pt'
     
     # 執行
     detect_all_folders(images_source_dir, detection_output_dir, model_weight)
